@@ -35,7 +35,7 @@
                             <div class="md:w-2/3">
                                 <input
                                     class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
-                                    id="total-income" type="text" value="">
+                                    id="total-income" type="text" value="1000">
                             </div>
                         </div>
                     </div>
@@ -50,7 +50,7 @@
                         <div class="md:w-2/3">
                             <input
                                 class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
-                                id="food-expense" type="text" value="">
+                                id="food-expense" type="text" value="100">
                         </div>
                     </div>
                     <div class="md:flex md:items-center mb-6">
@@ -63,7 +63,7 @@
                         <div class="md:w-2/3">
                             <input
                                 class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
-                                id="rent-expense" type="text" value="">
+                                id="rent-expense" type="text" value="200">
                         </div>
                     </div>
                     <div class="md:flex md:items-center mb-6">
@@ -76,7 +76,7 @@
                         <div class="md:w-2/3">
                             <input
                                 class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
-                                id="clothes-expense" type="text" value="">
+                                id="clothes-expense" type="text" value="300">
                         </div>
                     </div>
 
@@ -87,14 +87,16 @@
                         <div class="md:w-2/3">
                             <button
                                 class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
-                                type="button" id="total-expense-btn">
+                                type="button" id="total-expense-btn" onclick="totalExpenseEvent()">
                                 Calculate
                             </button>
                         </div>
                     </div>
                     <div>
-                        <div class="text-center text-3xl font-bold mt-5">Total Expenses: 5500</div>
-                        <div class="text-center text-3xl font-bold mt-5">Balance: 4500</div>
+                        <div class="text-center text-3xl font-bold mt-5">Total Expenses: <span
+                                id="total-expense"></span></div>
+                        <div class="text-center text-3xl font-bold mt-5">Balance: <span id="remaining-balance"></span>
+                        </div>
                     </div>
                     <div class="md:flex md:items-center mb-6">
                         <div class="md:w-1/3">
@@ -112,12 +114,23 @@
                         <div class="md:w-2/3">
                             <button
                                 class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
-                                type="button" id="save-btn">
+                                type="button" id="save-btn" onclick="percentSave()">
                                 Save
                             </button>
                         </div>
+                    </div>
+                    <div class="grid grid-cols-1 gap-4">
+                        <div class="text-center text-3xl font-bold mt-3 block">Saving Amount: <span
+                                id="save-amount"></span></div>
+                        <div class="text-center text-3xl font-bold mt-0">Remaining Balance: <span
+                                id="final-balance"></span>
+                        </div>
+                    </div>
                 </form>
+
             </div>
+
+
         </div>
 
     </div>
