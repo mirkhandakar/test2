@@ -1,9 +1,3 @@
-function allAmount() {
-
-}
-
-
-
 function totalExpenseEvent() {
 
 
@@ -11,8 +5,9 @@ function totalExpenseEvent() {
     const foodExpense = document.getElementById('food-expense').value;
     const rentExpense = document.getElementById('rent-expense').value;
     const clothesExpense = document.getElementById('clothes-expense').value;
-    if (isNaN(totalIncome && foodExpense && rentExpense && clothesExpense)) {
-        console.log('Enter Amount Figures')
+
+    if (isNaN(totalIncome) || isNaN(foodExpense) || isNaN(rentExpense) || isNaN(clothesExpense)) {
+        alert("Please enter a valid amount");
     }
     else {
         const tototalExpenseInput = document.getElementById('total-expense');
@@ -26,10 +21,7 @@ function totalExpenseEvent() {
         remainingBalanceInput.innerText = remainingBalanceAmount;
     }
 
-
-
 }
-
 
 function percentSave() {
 
@@ -60,10 +52,6 @@ function percentSave() {
     const totalExpenseAmount = parseFloat(foodExpense) + parseFloat(rentExpense) + parseFloat(clothesExpense);
 
     finalBalanceInput.innerText = totalIncomeAmount - percentageSave - totalExpenseAmount;
-    // finalBalanceAmount = totalIncomeAmount - percentageSave;
-    // finalBalanceInput.innerText = finalBalanceAmount;
-
-
 }
 
 
