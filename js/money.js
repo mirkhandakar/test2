@@ -13,12 +13,19 @@ function totalExpenseEvent() {
         const tototalExpenseInput = document.getElementById('total-expense');
         const tototalExpenseValue = tototalExpenseInput.innerText;
         const totalExpenseAmount = parseFloat(foodExpense) + parseFloat(rentExpense) + parseFloat(clothesExpense);
-        tototalExpenseInput.innerText = totalExpenseAmount;
 
-        const remainingBalanceInput = document.getElementById('remaining-balance');
-        const remainingBalanceValue = remainingBalanceInput.innerText;
-        const remainingBalanceAmount = parseFloat(totalIncome) - parseFloat(totalExpenseAmount);
-        remainingBalanceInput.innerText = remainingBalanceAmount;
+        if (totalIncome < totalExpenseAmount) {
+            alert("Expenses are greater then Income amount!!")
+        }
+        else {
+            tototalExpenseInput.innerText = totalExpenseAmount;
+
+            const remainingBalanceInput = document.getElementById('remaining-balance');
+            const remainingBalanceValue = remainingBalanceInput.innerText;
+            const remainingBalanceAmount = parseFloat(totalIncome) - parseFloat(totalExpenseAmount);
+            remainingBalanceInput.innerText = remainingBalanceAmount;
+        }
+
     }
 
 }
