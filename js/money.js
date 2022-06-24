@@ -25,33 +25,43 @@ function totalExpenseEvent() {
 
 function percentSave() {
 
+
+
     const totalIncome = document.getElementById('total-income').value;
     const totalIncomeAmount = parseFloat(totalIncome);
 
     const percentageInput = document.getElementById('percent-input').value;
-    const percentageAmount = parseFloat(percentageInput);
-    const percentageSave = totalIncomeAmount * percentageAmount / 100;
 
-    const saveInput = document.getElementById('save-amount');
-    const saveValue = parseFloat(saveInput.innerText);
-    saveInput.innerText = parseFloat(percentageSave);
+    if (isNaN(percentageInput)) {
+        alert("Please enter a valid amount");
+    }
+    else {
+        const percentageAmount = parseFloat(percentageInput);
+        const percentageSave = totalIncomeAmount * percentageAmount / 100;
+
+        const saveInput = document.getElementById('save-amount');
+        const saveValue = parseFloat(saveInput.innerText);
+        saveInput.innerText = parseFloat(percentageSave);
 
 
 
-    const finalBalanceInput = document.getElementById('final-balance');
-    const finalBalanceValue = finalBalanceInput.innerText;
-    const finalBalanceAmount = parseFloat(finalBalanceValue);
+        const finalBalanceInput = document.getElementById('final-balance');
+        const finalBalanceValue = finalBalanceInput.innerText;
+        const finalBalanceAmount = parseFloat(finalBalanceValue);
 
 
-    const foodExpense = document.getElementById('food-expense').value;
-    const rentExpense = document.getElementById('rent-expense').value;
-    const clothesExpense = document.getElementById('clothes-expense').value;
+        const foodExpense = document.getElementById('food-expense').value;
+        const rentExpense = document.getElementById('rent-expense').value;
+        const clothesExpense = document.getElementById('clothes-expense').value;
 
-    const tototalExpenseInput = document.getElementById('total-expense');
-    const tototalExpenseValue = tototalExpenseInput.innerText;
-    const totalExpenseAmount = parseFloat(foodExpense) + parseFloat(rentExpense) + parseFloat(clothesExpense);
+        const tototalExpenseInput = document.getElementById('total-expense');
+        const tototalExpenseValue = tototalExpenseInput.innerText;
+        const totalExpenseAmount = parseFloat(foodExpense) + parseFloat(rentExpense) + parseFloat(clothesExpense);
 
-    finalBalanceInput.innerText = totalIncomeAmount - percentageSave - totalExpenseAmount;
+        finalBalanceInput.innerText = totalIncomeAmount - percentageSave - totalExpenseAmount;
+    }
+
+
 }
 
 
