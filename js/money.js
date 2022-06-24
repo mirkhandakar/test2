@@ -1,3 +1,4 @@
+// calculate income and expenses
 function totalExpenseEvent() {
 
 
@@ -29,7 +30,7 @@ function totalExpenseEvent() {
     }
 
 }
-
+// calculate percentage of income and savings
 function percentSave() {
 
 
